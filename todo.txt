@@ -1,0 +1,25 @@
+function:
+print array
+split
+is_in_array(char *k, char **tab)
+char *get_file_content
+char **get_file_content_array
+strip
+rstrip
+range
+startwith
+endwith
+is_sorted
+sum_array
+replace(str, src, dest)
+join_array
+get_next_line
+count_char_in_str
+take_from_index_to_index
+compare_array
+
+data types:
+dynamic array
+dicto
+stack
+queue

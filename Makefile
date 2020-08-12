@@ -12,7 +12,7 @@ SRC =                          \
 
 OBJ = $(SRC:.c=.o)
 
-CPPFLAGS = -I.
+CPPFLAGS = -I./include
 
 all: $(NAME)
 

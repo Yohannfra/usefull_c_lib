@@ -7,7 +7,7 @@ char *get_str_in_range(const char *str, size_t beg, size_t end)
     char *result = NULL;
     int index = 0;
 
-    if (end - beg <= 0)
+    if ((int)(end - beg) < 0)
         return NULL;
     result = calloc(sizeof(char), (end - beg) + 2);
     if (result == NULL)

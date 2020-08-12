@@ -69,7 +69,7 @@ char **split(const char *str, const char *separators)
 }
 
 #if 0
-int main(int argc, const char **argv)
+int main(void)
 {
     char *str = "Hello world, how are you ?";
 

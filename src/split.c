@@ -1,8 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "usefull_c_lib.h"
-#include <string.h>
 
 static size_t count_needed_size(const char *str, const char *separators)
 {
@@ -10,6 +6,8 @@ static size_t count_needed_size(const char *str, const char *separators)
     bool last_was_sep = false;
     bool has_first = false;
 
+    if (is_str_made_of(str, separators))
+        return 0;
     for (size_t i = 0; str[i]; i++) {
         if (is_char_in_str(separators, str[i]) != -1 && !last_was_sep) {
             size += 1;
@@ -71,11 +69,12 @@ char **split(const char *str, const char *separators)
 #if 0
 int main(void)
 {
-    char *str = "Hello world, how are you ?";
+    char *str = "  ";
 
     char **tab = split(str, " ");
     print_char_array(tab);
-    free_char_array(tab);
+    if (tab)
+        free_char_array(tab);
     return 0;
 }
 #endif

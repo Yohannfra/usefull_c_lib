@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+#include "usefull_c_lib.h"
 
 char *get_file_extension(const char *filename, bool include_dot)
 {

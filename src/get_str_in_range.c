@@ -1,5 +1,3 @@
-#include <unistd.h>
-#include <stdlib.h>
 #include "usefull_c_lib.h"
 
 char *get_str_in_range(const char *str, size_t beg, size_t end)

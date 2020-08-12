@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdbool.h>
 #include "usefull_c_lib.h"
 
 void print_char_array(char **tab)

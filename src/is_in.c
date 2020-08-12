@@ -1,5 +1,4 @@
-#include <unistd.h>
-#include <string.h>
+#include "usefull_c_lib.h"
 
 ssize_t is_char_in_str(const char *str, char c)
 {

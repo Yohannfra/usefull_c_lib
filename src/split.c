@@ -20,6 +20,8 @@ static size_t count_needed_size(const char *str, const char *separators)
             last_was_sep = false;
         }
     }
+    if (last_was_sep)
+        size -= 1;
     return size;
 }
 
@@ -69,12 +71,14 @@ char **split(const char *str, const char *separators)
 #if 0
 int main(void)
 {
-    char *str = "  ";
+    // char *str = "  ";
 
-    char **tab = split(str, " ");
-    print_char_array(tab);
-    if (tab)
-        free_char_array(tab);
+    // char **tab = split(str, " ");
+    // print_char_array(tab);
+    // if (tab)
+    //     free_char_array(tab);
+
+    print_char_array(split("Coucou toi ", " "));
     return 0;
 }
 #endif

@@ -1,20 +1,25 @@
 NAME = usefull_lib.a
 
 SRC =                            \
+		src/array_len.c          \
 		src/count_char_in_str.c  \
 		src/endwith.c            \
 		src/free_array.c         \
+		src/get_file_content.c   \
 		src/get_file_extension.c \
 		src/get_str_in_range.c   \
 		src/is_in.c              \
 		src/is_str_made_of.c     \
+		src/join_array.c         \
 		src/print_array.c        \
 		src/print_bool.c         \
 		src/print_raw_string.c   \
+		src/range.c              \
 		src/replace.c            \
 		src/rev_str.c            \
 		src/split.c              \
 		src/startwith.c          \
+		src/strip.c              \
 		src/sum_array.c          \
 
 OBJ = $(SRC:.c=.o)

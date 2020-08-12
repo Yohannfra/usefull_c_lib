@@ -69,4 +69,20 @@ int sum_int_array(const int *arr, size_t size);
 void replace_char(char *str, char src, char des);
 void replace_str(char **str, char *src, char *des);
 
+// array_len.c
+ssize_t array_len(const char **array);
+
+// join_array.c
+char *join_array(const char **array, const char *sep);
+
+// strip.c
+void lstrip(char *s);
+void rstrip(char *s);
+void strip(char *s);
+
+// get_file_content.c
+char **get_file_content_arr(const char *fp);
+char *get_file_content(const char *fp);
+
+
 #endif // USEFULL_C_LIB_H

@@ -1,11 +1,5 @@
 function:
-char *get_file_content
-char **get_file_content_array
-strip
-rstrip
-range
 is_sorted
-join_array
 get_next_line
 
 data types:

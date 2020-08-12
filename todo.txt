@@ -1,9 +1,0 @@
-function:
-is_sorted
-get_next_line
-
-data types:
-dynamic array
-dicto
-stack
-queue

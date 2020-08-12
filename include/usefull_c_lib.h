@@ -47,4 +47,26 @@ void free_char_array(char **arr);
 // is_str_made_of.c
 bool is_str_made_of(const char *str, const char *chars);
 
+// print_bool.c
+void print_bool(bool val);
+
+// startwith.c
+bool startwith(const char *str, const char *pattern);
+
+// endwith.c
+bool endwith(const char *str, const char *pattern);
+
+// rev_str.c
+void rev_str(char *str);
+
+// count_char_in_str.c
+size_t count_char_in_str(const char *str, char c);
+
+// sum_array.c
+int sum_int_array(const int *arr, size_t size);
+
+// replace.c
+void replace_char(char *str, char src, char des);
+void replace_str(char **str, char *src, char *des);
+
 #endif // USEFULL_C_LIB_H

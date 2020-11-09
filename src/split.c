@@ -76,9 +76,9 @@ int main(void)
     // char **tab = split(str, " ");
     // print_char_array(tab);
     // if (tab)
-    //     free_char_array(tab);
+    //     free_string_array(tab);
 
-    print_char_array(split("Coucou toi ", " "));
+    print_string_array(split("Coucou toi ", " "));
     return 0;
 }
 #endif

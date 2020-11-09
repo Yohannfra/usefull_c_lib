@@ -1,6 +1,9 @@
 #include "usefull_c_lib.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
 
-void print_char_array(const char **tab)
+void print_string_array(char **tab)
 {
     printf("[");
     for (size_t i = 0; tab && tab[i] != NULL; i++) {
@@ -12,127 +15,7 @@ void print_char_array(const char **tab)
     printf("]\n");
 }
 
-void print_int_array(const int *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_uint_array(const unsigned int *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_int8_array(const int8_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_uint8_array(const uint8_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_int16_array(const int16_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_uint16_array(const uint16_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_int32_array(const int32_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_uint32_array(const uint32_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%d", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_int64_array(const int64_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%ld", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_uint64_array(const uint64_t *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%ld", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_float_array(const float *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%f", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_double_array(const double *tab, size_t size)
-{
-    printf("[");
-    for (size_t i = 0; i < size; i++) {
-        printf("%f", tab[i]);
-        printf("%s", i+1<size ? ", " : "");
-    }
-    printf("]\n");
-}
-
-void print_bool_array(const bool *tab, size_t size)
+void print_bool_array(bool *tab, size_t size)
 {
     printf("[");
     for (size_t i = 0; i < size; i++) {
@@ -142,16 +25,38 @@ void print_bool_array(const bool *tab, size_t size)
     printf("]\n");
 }
 
-#if 0
-int main()
-{
-    print_int_array((int[5]){1, 2, 3, 4, 5}, 5);
-    print_uint_array((unsigned int[5]){1, 2, 3, 4, 5}, 5);
-    print_int8_array((int8_t[5]){1, 2, 3, 4, 5}, 5);
-    print_uint8_array((uint8_t[5]){1, 2, 3, 4, 5}, 5);
-    print_float_array((float[5]){1,2,3,4,5}, 5);
-    // print_int_array_g((uint8_t[5]){1, 2, 3, 4, 5}, 5, sizeof(uint8_t));
+#define PRINT_ANY_INT_ARRAY(_size, format)                             \
+    void print_ ## _size ##  _array(_size *x, size_t size)             \
+    {                                                                  \
+        printf("[");                                                   \
+        for (size_t i = 0; i != size; i += 1){                         \
+            printf("%" format, x[i]);                                  \
+            printf("%s", i+1<size ? ", " : "");                        \
+        }                                                              \
+        printf("]\n");                                                 \
+    }
 
-    print_bool_array((bool[5]){true, false,true, false, true}, 5);
+PRINT_ANY_INT_ARRAY(float, "f")
+PRINT_ANY_INT_ARRAY(double, "f")
+PRINT_ANY_INT_ARRAY(int8_t, SCNd8)
+PRINT_ANY_INT_ARRAY(uint8_t, SCNu8)
+PRINT_ANY_INT_ARRAY(int16_t, SCNd16)
+PRINT_ANY_INT_ARRAY(uint16_t, SCNu16)
+PRINT_ANY_INT_ARRAY(int32_t, SCNd32)
+PRINT_ANY_INT_ARRAY(uint32_t, SCNu32)
+PRINT_ANY_INT_ARRAY(int64_t, SCNd64)
+PRINT_ANY_INT_ARRAY(uint64_t, SCNu64)
+
+#if 0
+int main(int ac, char ** av)
+{
+    print_array(((double[5]){1, 2, 3, 4, 5}), 5);
+    print_array(((unsigned int[5]){1, 2, 3, 4, 5}), 5);
+    print_array(((int8_t[5]){1, 2, 3, 4, 5}), 5);
+    print_array(((uint8_t[5]){1, 2, 3, 4, 5}), 5);
+    print_array(((float[5]){1,2,3,4,5}), 5);
+    print_array(((uint64_t[5]){1, 2, 3, 4, 5}), 5);
+    print_array(((bool[5]){true, false,true, false, true}), 5);
+    print_array(av, 5);
 }
 #endif

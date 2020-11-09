@@ -9,27 +9,16 @@
 #include <stdio.h>
 #include <string.h>
 
+/* #include "my_map.h" */
+
 // find_extension.c
 char *get_file_extension(const char *filename, bool include_dot);
 
 // split.c
 char **split(const char *str, const char *separators);
 
-// print_array.c
-void print_char_array(const char **tab);
-void print_int_array(const int *tab, size_t size);
-void print_uint_array(const unsigned int *tab, size_t size);
-void print_int8_array(const int8_t *tab, size_t size);
-void print_uint8_array(const uint8_t *tab, size_t size);
-void print_int16_array(const int16_t *tab, size_t size);
-void print_uint16_array(const uint16_t *tab, size_t size);
-void print_int32_array(const int32_t *tab, size_t size);
-void print_uint32_array(const uint32_t *tab, size_t size);
-void print_int64_array(const int64_t *tab, size_t size);
-void print_uint64_array(const uint64_t *tab, size_t size);
-void print_float_array(const float *tab, size_t size);
-void print_double_array(const double *tab, size_t size);
-void print_bool_array(const bool *tab, size_t size);
+// #define print_array __print_array
+#include "print_array.h"
 
 // is_in.c
 ssize_t is_char_in_str(const char *str, char c);
@@ -83,6 +72,5 @@ void strip(char *s);
 // get_file_content.c
 char **get_file_content_arr(const char *fp);
 char *get_file_content(const char *fp);
-
 
 #endif // USEFULL_C_LIB_H

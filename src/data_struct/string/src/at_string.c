@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2020
-** project_name
-** File description:
-** at
-*/
-
 #include <stddef.h>
 #include "string.h"
 

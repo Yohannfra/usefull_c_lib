@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2020
-** project_name
-** File description:
-** size_string
-*/
-
 #include "string.h"
 
 int size(const string_t *this)

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2020
-** prokect_name
-** File description:
-** copy_string
-*/
-
 #include "string.h"
 #include <stddef.h>
 #include <stdbool.h>

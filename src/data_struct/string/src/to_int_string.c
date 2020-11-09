@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2020
-** project_name
-** File description:
-** to_int_string
-*/
-
 #include "string.h"
 #include <stdlib.h>
 

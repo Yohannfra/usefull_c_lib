@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "print_array.h"
 /* #include "my_map.h" */
 
 // find_extension.c
@@ -16,9 +17,6 @@ char *get_file_extension(const char *filename, bool include_dot);
 
 // split.c
 char **split(const char *str, const char *separators);
-
-// #define print_array __print_array
-#include "print_array.h"
 
 // is_in.c
 ssize_t is_char_in_str(const char *str, char c);

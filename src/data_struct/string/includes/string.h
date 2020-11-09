@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2020
-** project_name
-** File description:
-** string
-*/
-
 #ifndef STRING_H
 #define STRING_H
 
